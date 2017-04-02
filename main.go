@@ -77,7 +77,7 @@ func getModels(brand int64) {
 	for i := 0; i < len(*modelsresult); i++ {
 		fmt.Println((*modelsresult)[i].Text)
 		fmt.Println((*modelsresult)[i].Value)
-		getModelYears((*modelsresult)[i].Value)
+		getModelYears(brand, (*modelsresult)[i].Value)
 	}
 }
 
