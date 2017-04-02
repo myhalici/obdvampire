@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 type Brands []struct {
@@ -161,9 +162,9 @@ func getLocation(brand int64, model int64, modelyears int64, modelchasis int64, 
 	hodo(err)
 	locationresult, err := bodyLocation([]byte(body))
 
-	fmt.Println(locationresult.Area)
 	fmt.Println(locationresult.Location)
 	fmt.Println(locationresult.Picture)
+	fmt.Println(strings.Replace(locationresult.Area, "/media/", "https://www.hum.com/content/dam/", -1))
 }
 
 func main() {
